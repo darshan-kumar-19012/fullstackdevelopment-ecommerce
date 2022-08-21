@@ -45,7 +45,7 @@ public class UserController {
     @PutMapping("/users/{id}")
     public ResponseEntity<User> updateUsers(@PathVariable Long id, @RequestBody User userDetails){
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
+                .orElseThrow(() -> new ResourceNotFoundException("User not exist with id :" + id));
 
         user.setUserName(userDetails.getUserName());
         user.setEmail(userDetails.getEmail());
