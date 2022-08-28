@@ -11,6 +11,9 @@ import CreateProductComponent from "./components/CreateProductComponent";
 import ViewProductComponent from "./components/ViewProductComponent";
 import ListProductComponent from "./components/ListProductComponent";
 import MainSelect  from "./components/mainselect";
+import SearchOrderComponent from "./components/SearchOrderComponent";
+import SearchUserComponent from "./components/SearchUserComponent";
+import SearchProductComponent from "./components/SearchProductComponent";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
             <Route path = "/orders" component = {ListOrderComponent}></Route>
             <Route path = "/add-order/:id" component = {UpdateUserComponent}></Route>
             <Route path = "/view-order/:id" component = {ViewOrderComponent}></Route>
+            <Route path = "/orderSearch" component={SearchOrderComponent}></Route>
+            <Route path = "/userSearch" component={SearchUserComponent}></Route>
+            <Route path = "/productSearch" component={SearchProductComponent}></Route>
             <Route path="/products" component={ListProductComponent}></Route>
             <Route path="/add-product/:id" component={CreateProductComponent}></Route>
             <Route path="/view-product/:id" component={ViewProductComponent}></Route>
