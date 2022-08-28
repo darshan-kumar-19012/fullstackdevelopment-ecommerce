@@ -4,6 +4,8 @@ package com.example.shoppingbackend.controller;
 import com.example.shoppingbackend.exception.ResourceNotFoundException;
 import com.example.shoppingbackend.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.shoppingbackend.repository.UserRepository;
@@ -65,5 +67,10 @@ public class UserController {
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 		return ResponseEntity.ok(response);
-}
+    }
+
+    @GetMapping("/users/search/{keyword}")
+    public Page<User> getUserSearch(Pageable pageable, @PathVariable("keyword") String keyword) {
+        return userRepository.findAll(pageable,keyword);
+    }
 }

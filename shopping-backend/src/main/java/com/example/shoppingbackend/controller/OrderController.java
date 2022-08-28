@@ -72,7 +72,7 @@ public class OrderController {
     }
 
     @GetMapping("/orders/search/{keyword}")
-    public Page<Order> getAllBooks(Pageable pageable,@PathVariable("keyword") String keyword) {
+    public Page<Order> getOrderSearch(Pageable pageable,@PathVariable("keyword") String keyword) {
         return orderRepository.findAll(pageable,keyword);
     }
 

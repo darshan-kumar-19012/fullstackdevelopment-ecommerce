@@ -3,8 +3,11 @@ package com.example.shoppingbackend.controller;
 
 import com.example.shoppingbackend.exception.ResourceNotFoundException;
 import com.example.shoppingbackend.model.Product;
+import com.example.shoppingbackend.model.User;
 import com.example.shoppingbackend.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -64,5 +67,10 @@ public class ProductController {
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/products/search/{keyword}")
+    public Page<Product> getProductSearch(Pageable pageable, @PathVariable("keyword") String keyword) {
+        return productRepository.findAll(pageable,keyword);
     }
 }
