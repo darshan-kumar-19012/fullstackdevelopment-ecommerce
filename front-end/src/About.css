@@ -1,0 +1,65 @@
+.column {
+    float: left;
+    width: 28%;
+    height: 50%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    background: linear-gradient(to right,#654ea3,#eaafc8);
+    margin: 2rem;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+    height: 90%;
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background: linear-gradient(to right,#ee9ca7,#ffdde1);
+    color: white;
+    margin: 2rem;
+  }
+
+  .about-section h1{
+    color: #000;
+  }
+  
+  .containerr {
+    padding: 0 16px;
+    height: 50%;
+  }
+  
+  .containerr::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    display: block;
+    padding: 8px;
+    margin-left: -1%;
+    color: white;
+    background-color: #000;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
